@@ -1,0 +1,24 @@
+[project]
+name = "comic-panel-extractor"
+version = "0.1.0"
+description = "Extract individual panels from comic images"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "opencv-python>=4.9.0",
+    "numpy>=1.26.0",
+    "pillow>=10.2.0",
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "python-multipart>=0.0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = [
+    "panel_extractor.py",
+    "panel_web.py",
+]
